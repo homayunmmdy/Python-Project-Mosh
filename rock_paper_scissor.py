@@ -3,7 +3,7 @@ import random
 ROCK = 'r'
 SCISSORS = 's'
 PAPER = 'p'
-emojis = {ROCK: 'rock emoji' , SCISSORS : 'scissors emoji' , PAPER: 'paper emoji'}
+emojis = {ROCK: '🪨​' , SCISSORS : '✂️​' , PAPER: '​📰'}
 chocies = tuple(emojis.keys())
 
 def get_user_choice():
