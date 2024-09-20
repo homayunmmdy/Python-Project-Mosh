@@ -9,3 +9,6 @@ changing the structure of the code without changin its functionality.
 
 ### Modularization
 Breaking down a large program into samller resusable parts called modules or functions.
+
+## DRY
+Don't Repeat Yourself
