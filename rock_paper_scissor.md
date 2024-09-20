@@ -1,0 +1,9 @@
+- Ask the user to make choice
+- If choice not valid
+  - print an error
+- let the computer to make choice
+- Print choices (emoji)
+- Determine the winner
+- Ask the user if they want to continue
+- if not
+  - Terminate
