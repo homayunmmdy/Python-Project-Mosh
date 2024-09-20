@@ -1,0 +1,11 @@
+- Generate a random number
+- Loop
+  - Ask the user to make a guess
+  - If not a valid number
+    - Print an error
+  - If number < guess
+    - Print too low
+  - If number > guess
+    - Print too high
+  - Else
+    - Print well done
