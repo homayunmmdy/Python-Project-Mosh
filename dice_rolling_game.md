@@ -1,0 +1,10 @@
+- loop
+  - Ask: roll the dice?
+  - If user enters y
+    - Generate two random numbers
+    - Print them
+  - If user enter n
+    - Print thank you message
+    - Terminate
+  - Else
+    - Invalid choice
