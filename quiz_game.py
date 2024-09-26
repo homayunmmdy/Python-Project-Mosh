@@ -1,21 +1,25 @@
 import random
 from termcolor import cprint
 
+QUESTION = 'question'
+OPTIONS = 'options'
+ANSWER = 'answer'
+
 quiz = [
     {
-        'question': 'What is the capital of France ?',
-        'options': ['A. Berlin', 'B. Madrid', 'C. Parice', 'D. Rome'],
-        'answer': 'C'
+        QUESTION: 'What is the capital of France ?',
+        OPTIONS: ['A. Berlin', 'B. Madrid', 'C. Parice', 'D. Rome'],
+        ANSWER: 'C'
     },
     {
-        'question': 'Which planet is known as the red planet ?',
-        'options': ['A. Earth', 'B. Mars', 'C. Jupiter', 'D. Saturn'],
-        'answer': 'B'
+        QUESTION: 'Which planet is known as the red planet ?',
+        OPTIONS: ['A. Earth', 'B. Mars', 'C. Jupiter', 'D. Saturn'],
+        ANSWER: 'B'
     },
     {
-        'question': 'What is the larget ocean on Earth ?',
-        'options': ['A. Atlantic', 'B. Indian', 'C. Arctic', 'D. Pacific'],
-        'answer': 'D'
+        QUESTION: 'What is the larget ocean on Earth ?',
+        OPTIONS: ['A. Atlantic', 'B. Indian', 'C. Arctic', 'D. Pacific'],
+        ANSWER: 'D'
     }
 ]
 
@@ -23,13 +27,13 @@ random.shuffle(quiz)
 score = 0
 
 for index,item in enumerate(quiz, 1):
-    print(f'Question {index}: {item["question"]}')
-    for option in item['options']:
+    print(f'Question {index}: {item[QUESTION]}')
+    for option in item[OPTIONS]:
         print(option)
         
     answer = input('Your anser: ').upper().strip()
     
-    if answer == item['answer']:
+    if answer == item[ANSWER]:
         cprint('Correct!', 'green')
         score += 1
     else:
