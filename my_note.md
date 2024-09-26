@@ -12,3 +12,10 @@ Breaking down a large program into samller resusable parts called modules or fun
 
 ## DRY
 Don't Repeat Yourself
+for sitution that we have sencetive name and one typo mistake can lead to mistake store all of theme in one place to not repeat yourself and have one place to change in future 
+
+## Don't use global value 
+DOn't use global value as much as possible
+
+## Function
+each function you create is good to have only one and single responsiblity to do

@@ -5,7 +5,31 @@ QUESTION = 'question'
 OPTIONS = 'options'
 ANSWER = 'answer'
 
-quiz = [
+def ask_question(index, question, options):
+    print(f'Question {index}: {question}')
+    for option in options:
+        print(option)
+        
+    return input('Your anser: ').upper().strip()
+    
+def run_quiz(quiz):
+    random.shuffle(quiz)
+    score = 0
+
+    for index,item in enumerate(quiz, 1):
+        answer = ask_question(index, item[QUESTION], item[OPTIONS])
+        
+        if answer == item[ANSWER]:
+            cprint('Correct!', 'green')
+            score += 1
+        else:
+            cprint(f'Wrong! The correct answer is {item["answer"]}', 'red')   
+        print()    
+        
+    print(f'Quiz over! Your final score is {score} out {len(quiz)}')
+    
+def main():
+    quiz = [
     {
         QUESTION: 'What is the capital of France ?',
         OPTIONS: ['A. Berlin', 'B. Madrid', 'C. Parice', 'D. Rome'],
@@ -22,22 +46,7 @@ quiz = [
         ANSWER: 'D'
     }
 ]
-
-random.shuffle(quiz)
-score = 0
-
-for index,item in enumerate(quiz, 1):
-    print(f'Question {index}: {item[QUESTION]}')
-    for option in item[OPTIONS]:
-        print(option)
-        
-    answer = input('Your anser: ').upper().strip()
+    run_quiz(quiz)
     
-    if answer == item[ANSWER]:
-        cprint('Correct!', 'green')
-        score += 1
-    else:
-        cprint(f'Wrong! The correct answer is {item["answer"]}', 'red')   
-    print()    
-    
-print(f'Quiz over! Your final score is {score} out {len(quiz)}')
+if __name__ == "__main__":
+    main()
