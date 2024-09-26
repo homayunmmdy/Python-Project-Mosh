@@ -1,0 +1,11 @@
+- Define question , options , correct answer
+- Shuffle the question
+- loop over the question 
+  - print question
+  - Get user input
+  - If input is correct 
+    - print correct asnwer
+    - Incress score
+  - Else 
+    - Print wrong answer
+- Print the final score
