@@ -1,3 +1,5 @@
+from termcolor import colored
+
 X = 'X'
 O = "O"
 
@@ -7,11 +9,16 @@ board = [
     [' ', ' ', ' ' ]
 ]
 
+def cell(mark):
+    color = 'red' if mark == X else 'green'
+    return colored(mark , color)
+
+
 def print_board(board):
     line = '---+---+---'
     print(line)
     for row in board:
-        print(f" {row[0]} | {row[1]} | {row[2]}")
+        print(f" {cell(row[0])} | {cell(row[1])} | {cell(row[2])}")
         print(line)
     
 def check_winner(board):
