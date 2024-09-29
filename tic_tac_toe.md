@@ -11,5 +11,5 @@
         - Break
     - If the board is full
         - Print message 
-        - Break
+        -
     - Switch the current player
