@@ -1,0 +1,15 @@
+- Declare the board
+- Print the board
+- Current player = 'x'
+- Loop
+    - Ask the current player for a move
+    - Store their mark on the board 
+    - Print the board
+    - Check the winner
+    - If we have a winner 
+        - Print message 
+        - Break
+    - If the board is full
+        - Print message 
+        - Break
+    - Switch the current player
