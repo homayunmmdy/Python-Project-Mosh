@@ -19,3 +19,6 @@ DOn't use global value as much as possible
 
 ## Function
 each function you create is good to have only one and single responsiblity to do
+
+## If statement 
+more you use if statement the code is become much more harder the maintain and understand try to remove other cases as much as you can.

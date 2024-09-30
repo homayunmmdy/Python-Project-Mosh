@@ -1,0 +1,20 @@
+- loop
+  - Print the menu
+  - Get user choice
+  - If choice == '1'
+    - Display tasks
+  - Else choice == '2'
+    - Add Task
+    - Ask the user for the task
+    - Add it to a list
+  - Else choice == '3'
+    - Remove the task
+    - loop
+      - Ask the user for task number
+      - validate the task number
+      - if invalid , print an error
+      - Else , remove the given task, break
+  - Else choice == '4'
+    - Break
+  - Else
+    - print an error
