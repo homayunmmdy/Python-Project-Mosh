@@ -1,32 +1,38 @@
 import os 
 
-def main():
-    filename = input('Enter the file name to open or create: ').strip()
-    try:
-        if os.path.exists(filename):
-            with open(filename, 'r') as file:
-                content = file.read()
-                print(content)
-        else:
-            with open(filename, 'w') as file:
-                pass
-    except OSError:
-        print(f"{filename} could not be opened")
-        return
-    
+def read_file(filename):
+    with open(filename, 'r') as file:
+        return file.read()
+
+def write_file(filename , content):
+    with open(filename, 'w') as file:
+        file.write(content)   
+
+def get_user_input():
     print('\n Enter your text (type SAVE on a new line to save and exit)')
-    content = []
+    
+    lines = []
     while True:
         line = input()
         if line == 'SAVE':
             break
-        content.append(line)
-    try:    
-        with open(filename, 'w') as file:
-            file.write('\n'.join(content))
-            print(f"{filename} saved.")
+        lines.append(line)
+        
+    return '\n'.join(lines)
+
+def main():
+    filename = input('Enter the file name to open or create: ').strip()
+    try:
+        if os.path.exists(filename):
+            print(read_file(filename))
+        else:
+            write_file(filename, '')
+
+        content = get_user_input()
+        write_file(filename,content)  
+        print(f"{filename} saved.")
     except OSError:
-        print(f"{filename} could not be saved")
+        print(f"{filename} could not be opened")
     
 if __name__ == '__main__':
     main()
