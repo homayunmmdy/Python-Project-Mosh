@@ -1,0 +1,13 @@
+- Ask the user for a filename
+- if file exist
+  - open it
+  - Write its content to the terminal
+- Else
+  - Create new file
+- If file cannot be opened
+  - Print an error
+- Loop
+  - Get User input
+  - If input == 'SAVE'
+    - Break
+  - Write all the user input into the file
