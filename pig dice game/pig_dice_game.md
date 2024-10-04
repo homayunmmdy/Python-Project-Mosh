@@ -1,0 +1,17 @@
+- Run the game until a player wins
+- Player 1 takes a turn
+  - Roll a die
+  - if roll == 1
+    - Turn point = 0
+    - Turn ends
+  - Else
+    - Add roll to the turn points
+    - Ask the user if they want to roll again ?
+    - If yes , repeat
+    - Else , turn ends and we return turn points
+
+- Update player 1's points
+- Print statistics
+- Check if player 1 wins (total points >= 100)
+- If yes , terminate the game
+- Otherwise we swap player
