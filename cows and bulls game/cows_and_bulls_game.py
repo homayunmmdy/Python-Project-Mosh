@@ -1,23 +1,14 @@
 import random
 
 def generate_secret():
-    digits = [0,1,2,3,4,5,6,7,8,9]
+    digits = list(range(10))
     random.shuffle(digits)
-    secret = ''
-    for digit in digits[:4]:
-        secret += str(digit)
-    return secret
+    return ''.join([str(digit) for digit in digits[:4]])
     
 def calculate_cows_and_bulls(secret , guess):
-    cows = 0
-    bulls = 0
-    
-    for i in range(4):
-        if guess[i] == secret[i]:
-            bulls += 1
-        elif guess[i] in secret[i]:
-            cows += 1
-            
+    bulls = sum([1 for i in range(4) if guess[i] == secret[i]])
+    cows = sum([1 for i in range(4) if guess[i] in secret[i]]) - bulls
+
     return cows, bulls
 
 def main():
