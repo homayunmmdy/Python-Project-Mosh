@@ -1,0 +1,18 @@
+- Generate a scret number with unique digits
+- Loop
+  - Ask the user to make guess
+  - Validate the guess(4 digits - unique)
+  - If invalid
+    - Print an error
+    - Contiue
+  - Else
+    - Calculate cows and bulls
+      - For each digit in the guess
+        - If digit exists in the same position in the secret
+            - Increment bulls
+        - If digit exists in the secret
+            - Increment cows
+    - Print  cows and bulls
+    - If bulls == 4
+        - Print message 
+        - Break
