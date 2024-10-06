@@ -22,3 +22,9 @@ each function you create is good to have only one and single responsiblity to do
 
 ## If statement 
 more you use if statement the code is become much more harder the maintain and understand try to remove other cases as much as you can.
+
+## Error handling 
+allways try to see all positible way that error might happend and be read for it by handling that error properly like check if user not upload file what happed what happend if that file empty what happend if format wrong , ...
+
+# Testing 
+as you go baby setp make sure to test each step before you go for the next one
