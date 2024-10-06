@@ -1,0 +1,25 @@
+- Ask the usere for hte starting balance 
+- Validate the balance 
+    - Positive number
+- Loop (wile balance > 0)
+    - Print the current balance 
+    - Ask the user to bet
+    - Validate the bet
+        - Graeter than 0
+        - Less than the balance
+    - Spin the reels
+        - Generate three random symbols
+    - Display the reels
+    - Calculate the payout
+        - If three symbol match, payout = bet x 10
+        - If two symbol match , payout = bet x 2
+        - Else payout = 0
+    - Recalculate the balance
+        - balance += payout - bet
+    - If balace <= 0
+        - Print message 
+        - Break
+    - Else
+        - Ask the user if they want to continue playing?
+        - If not 
+            - Break
