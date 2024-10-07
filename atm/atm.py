@@ -3,23 +3,19 @@ class ATM:
         self.balance = 0;
         
     def check_balance(self):
-        print(f"Your current balance is: ${self.balance}")
+        return self.balance
         
     def deposite(self, amount):
-        if amount > 0:
-            self.balance += amount
-            print(f"Successfully deposited ${amount}")
-        else:
-            print('Deposit amount must be positive')    
+        if amount <= 0:
+            return False
+    
+        self.balance += amount
+        return True
             
     def withdraw(self , amount):
-        if amount > self.balance:
-            print('Insufficient funds.')
-        elif amount <= 0:
-            print("Withdrawal amount must be positive")
-        else:
-            self.balance -= amount
-            print(f"Successfully withdrow ${amount}")
+        if amount > self.balance or amount <= 0:
+            return False
+        self.balance -= amount
             
 def main():
     atm = ATM();
@@ -32,21 +28,31 @@ def main():
         
         choice = input('Please choose an option: ')
         if choice == '1':
-            atm.check_balance()
+            balance = atm.check_balance()
+            print(f"Your current balance is: ${balance}")
         elif choice == '2':
             while True:
                 try:
                     amount = float(input('Enter the amount to deposit: '))
-                    atm.deposite(amount)
-                    break
+                    if atm.deposite(amount):
+                        print(f"Successfully deposited ${amount}")  
+                        break
+                    else:
+                        print('Deposit amount must be positive')
                 except ValueError:
                     print('Please enter a valid number: ')
         elif choice == '3':
              while True:
                 try:
                     float(input('Enter the amount to withdraw: '))
-                    atm.withdraw(amount)
-                    break
+                    if amount <= 0:
+                        print('Insufficient funds.')
+                    elif amount > atm.check_balance():
+                        print('Insufficient funds.')
+                    else:
+                        atm.withdraw(amount);
+                        print(f"Successfully withdrow ${amount}")
+                        break
                 except ValueError:
                     print('Please enter a valid number')
         elif choice == '4':
