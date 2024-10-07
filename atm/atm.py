@@ -7,14 +7,17 @@ class ATM:
         
     def deposite(self, amount):
         if amount <= 0:
-            return False
+            raise ValueError('deposite amount must be positive.')
     
         self.balance += amount
         return True
             
     def withdraw(self , amount):
-        if amount > self.balance or amount <= 0:
-            return False
+        if amount <= 0:
+            raise ValueError('Withdrawal amount must be positive.')
+        if amount > self.balance:
+            raise ValueError('Insufficient funds.')
+
         self.balance -= amount
             
 def main():
@@ -34,27 +37,20 @@ def main():
             while True:
                 try:
                     amount = float(input('Enter the amount to deposit: '))
-                    if atm.deposite(amount):
-                        print(f"Successfully deposited ${amount}")  
-                        break
-                    else:
-                        print('Deposit amount must be positive')
-                except ValueError:
-                    print('Please enter a valid number: ')
+                    atm.deposite(amount)
+                    print(f"Successfully deposited ${amount}")  
+                    break
+                except ValueError as e:
+                    print(e)
         elif choice == '3':
              while True:
                 try:
-                    float(input('Enter the amount to withdraw: '))
-                    if amount <= 0:
-                        print('Insufficient funds.')
-                    elif amount > atm.check_balance():
-                        print('Insufficient funds.')
-                    else:
-                        atm.withdraw(amount);
-                        print(f"Successfully withdrow ${amount}")
-                        break
-                except ValueError:
-                    print('Please enter a valid number')
+                    float(input('Enter the amount to withdraw: '))   
+                    atm.withdraw(amount);
+                    print(f"Successfully withdrow ${amount}")
+                    break
+                except ValueError as e:
+                    print(e)
         elif choice == '4':
             print('Thank you for using the ATM')
             break
