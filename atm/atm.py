@@ -19,7 +19,14 @@ class ATM:
             raise ValueError('Insufficient funds.')
 
         self.balance -= amount
-            
+
+def get_number(propmt):
+    while True:
+        try:
+            return float(input(propmt))
+        except ValueError:
+            print('Please enter a valid number')
+                
 def main():
     atm = ATM();
     while True:
@@ -36,7 +43,7 @@ def main():
         elif choice == '2':
             while True:
                 try:
-                    amount = float(input('Enter the amount to deposit: '))
+                    amount = get_number('Enter the amount to deposit: ')
                     atm.deposite(amount)
                     print(f"Successfully deposited ${amount}")  
                     break
@@ -45,7 +52,7 @@ def main():
         elif choice == '3':
              while True:
                 try:
-                    float(input('Enter the amount to withdraw: '))   
+                    get_number('Enter the amount to withdraw: ')
                     atm.withdraw(amount);
                     print(f"Successfully withdrow ${amount}")
                     break
