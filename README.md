@@ -1,4 +1,4 @@
-## Python Projects for Beginners – Learning Notes
+## Python Projects for Beginners
 
 ![Screenshot 2025-05-22 175406](https://github.com/user-attachments/assets/c7636f75-c52f-48dd-98b7-7d280a04e6d4)
 
@@ -20,3 +20,8 @@ My main goal was to learn how to break down complex problems and improve my logi
 * Build coding confidence—even outside my primary tech stack
 
 While I still consider myself a beginner in Python, the skills I developed during this course are applicable across languages and have improved how I approach challenges in any programming context.
+
+### 📢 Note on Course Access
+Due to international sanctions in Iran, I was unable to access the official Code With Mosh platform directly. I obtained the course through a third-party distributor and completed it in full. While I do not have an official certificate, I carefully followed all course content and documented my learning here.
+
+For courses that included hands-on projects, the completed work is available in this repository. For others that were more theory-focused, I’ve included comprehensive notes, summaries, and all relevant materials as evidence of completion and understanding.
